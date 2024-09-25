@@ -155,9 +155,30 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .product-grid {
-    flex-direction: column;
-    align-items: center;
+
+@media (max-width: 800px) {
+  .hero-section {
+    height: 20vh;
+    margin-top: 20px;
+    width: 110%;
+    padding: 0;
+    margin-left: -20px;
+    border-radius: 0;
   }
+
+  .hero-overlay{
+    border-radius: 0;
+  }
+
+  .hero-content h1 {
+    color: #fff;
+    font-size: 2rem;
+    z-index: 1;
+    font-weight: 600;
+    position: relative;
+    font-style: italic;
+  }
+
+
+
 }

@@ -222,7 +222,7 @@
 
   .info-card {
     flex: 1; /* Memastikan semua kartu memiliki ukuran yang sama */
-    min-width: 120px; /* Menetapkan lebar minimum untuk kartu */
+    min-width: 50px; /* Menetapkan lebar minimum untuk kartu */
     max-width: 150px; /* Menetapkan lebar maksimum untuk kartu */
     padding: 10px; /* Mengurangi padding dalam kartu */
   }
