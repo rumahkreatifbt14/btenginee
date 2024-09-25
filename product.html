@@ -100,7 +100,7 @@
       <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <h1>Produk Kami</h1>
+          <h1>#Produk Kami</h1>
         </div>
       </section>
 
@@ -153,6 +153,7 @@
             </div>
           </div>
 
+
           <!-- Product Card 3 -->
           <div class="product-card">
             <img src="img/contoh.jpeg" alt="Bag" />
@@ -175,11 +176,82 @@
               </div>
             </div>
           </div>
+
+           <!-- Product Card 4 -->
+           <div class="product-card">
+            <img src="img/contoh.jpeg" alt="Bag" />
+            <div class="product-info">
+              <h3>Bag</h3>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <span class="rating-value">4.7</span>
+                <span class="reviews" data-reviews="0">(0 Reviews)</span>
+              </div>
+              <div class="price-buy">
+                <span class="price">Rp 30.000</span>
+                <a
+                  href="#"
+                  class="button"
+                  onclick="updateReviewsAndWhatsApp(this, '004', 'Bag')"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> BELI
+                </a>
+              </div>
+            </div>
+          </div>
+
+           <!-- Product Card 5 -->
+           <div class="product-card">
+            <img src="img/contoh.jpeg" alt="Bag" />
+            <div class="product-info">
+              <h3>Bag</h3>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <span class="rating-value">4.7</span>
+                <span class="reviews" data-reviews="0">(0 Reviews)</span>
+              </div>
+              <div class="price-buy">
+                <span class="price">Rp 30.000</span>
+                <a
+                  href="#"
+                  class="button"
+                  onclick="updateReviewsAndWhatsApp(this, '005', 'Bag')"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> BELI
+                </a>
+              </div>
+            </div>
+          </div>
+
+           <!-- Product Card 6 -->
+           <div class="product-card">
+            <img src="img/contoh.jpeg" alt="Bag" />
+            <div class="product-info">
+              <h3>Bag</h3>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <span class="rating-value">4.7</span>
+                <span class="reviews" data-reviews="0">(0 Reviews)</span>
+              </div>
+              <div class="price-buy">
+                <span class="price">Rp 30.000</span>
+                <a
+                  href="#"
+                  class="button"
+                  onclick="updateReviewsAndWhatsApp(this, '006', 'Bag')"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> BELI
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </section>
     </main>
 
-    <script>
+   <script>
       function updateReviewsAndWhatsApp(button, productCode, productName) {
         // Get the reviews span and its current count
         const reviewsSpan = button.closest('.product-card').querySelector('.reviews');
