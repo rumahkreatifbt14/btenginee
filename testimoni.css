@@ -113,10 +113,22 @@ main {
   color: #800000;
 }
 
+footer {
+  background-color: #800000; /* Warna sesuai dengan tema */
+  color: #fff; /* Warna teks putih */
+  text-align: center;
+  padding: 10px 0;
+  position: relative; /* Footer berada di bawah main content */
+  width: 100%;
+  font-size: 0.9em; /* Ukuran font yang kecil namun tetap terbaca */
+}
+
 /* Responsive for mobile devices */
 @media (max-width: 768px) {
   main {
+    margin-top: 50px;
     height: auto;
+    overflow: hidden;
     padding: 20px 10px;
   }
 
@@ -134,8 +146,14 @@ main {
   }
 
   .testimonial-card {
+    width: 80px;
     margin: 5px;
     padding: 10px;
+  }
+
+  footer {
+    font-size: 0.8em; /* Sedikit lebih kecil pada mobile */
+    padding: 15px 0; /* Memberikan ruang lebih di mobile */
   }
 
   .testimonial-avatar {

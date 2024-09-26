@@ -71,7 +71,7 @@
         <div class="testimonial-slider" id="testimonial-slider">
           <div class="testimonial-card">
             <div class="testimonial-content">
-              <h3>1. Layanan yang Luar Biasa!</h3>
+              <h3>Layanan yang Luar Biasa!</h3>
               <p>"Bekerja dengan BT Enginee adalah pengalaman yang luar biasa. Tim mereka sangat responsif dan efisien, menyelesaikan proyek kami tepat waktu dengan kualitas yang luar biasa. Sangat merekomendasikan layanan mereka!"</p>
               <img src="img/WhatsApp Image 2024-09-26 at 16.10.50.jpeg" alt="Testimonial Avatar" class="testimonial-avatar" />
               <h4>Belinha Da Costa Monteiro. M.Pd</h4>
@@ -79,7 +79,7 @@
           </div>
           <div class="testimonial-card">
             <div class="testimonial-content">
-              <h3>2. Profesional dan Terpercaya</h3>
+              <h3>Profesional dan Terpercaya</h3>
               <p>"BT Enginee telah menjadi mitra yang sangat berharga bagi perusahaan kami. Profesionalisme dan dedikasi mereka untuk memahami kebutuhan kami menghasilkan kolaborasi yang sangat sukses. Kami sangat puas!".</p>
               <img src="img/Damri-M-Hutabalian.png" alt="Testimonial Avatar" class="testimonial-avatar" />
               <h4>Damri Hutabalian</h4>
@@ -87,7 +87,7 @@
           </div>
           <div class="testimonial-card">
             <div class="testimonial-content">
-              <h3>3. Sangat Direkomendasikan!</h3>
+              <h3>Sangat Direkomendasikan!</h3>
               <p>"Perhatian mereka terhadap detail dan komitmen untuk memberikan hasil berkualitas tinggi melebihi harapan kami. BT Enginee benar-benar menonjol di industri ini."</p>
               <img src="img/contoh.jpeg" alt="Testimonial Avatar" class="testimonial-avatar" />
               <h4>Jackson Tobing</h4>
@@ -98,32 +98,61 @@
       </div>
     </main>
 
+    <footer>
+      <p>&copy; 2024 BT Enginee. All rights reserved.</p>
+    </footer>
     <script>
       const slider = document.getElementById("testimonial-slider");
       const leftArrow = document.getElementById("left-arrow");
       const rightArrow = document.getElementById("right-arrow");
 
-      // Set the scroll amount to the width of the card (which is 100% of the container)
-      let scrollAmount = slider.clientWidth;
+      // Ambil semua testimonial cards
+      const testimonialCards = document.querySelectorAll(".testimonial-card");
 
-      // Scroll left
-      leftArrow.addEventListener("click", () => {
-        slider.scrollBy({
-          top: 0,
-          left: -scrollAmount,
-          behavior: "smooth",
-        });
-      });
+      // Variabel untuk melacak card yang sedang ditampilkan
+      let currentIndex = 0;
 
-      // Scroll right
-      rightArrow.addEventListener("click", () => {
-        slider.scrollBy({
+      // Fungsi untuk menghitung lebar setiap card
+      function getCardWidth() {
+        return testimonialCards[0].clientWidth + 20; // Tambahkan margin (10px kiri dan kanan)
+      }
+
+      // Scroll ke card berdasarkan indeks
+      function scrollToCard(index) {
+        const scrollAmount = getCardWidth() * index;
+        slider.scrollTo({
           top: 0,
           left: scrollAmount,
           behavior: "smooth",
         });
+      }
+
+      // Scroll ke kiri
+      leftArrow.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = testimonialCards.length - 1; // Jika di awal, kembali ke card terakhir
+        }
+        scrollToCard(currentIndex);
       });
 
+      // Scroll ke kanan
+      rightArrow.addEventListener("click", () => {
+        if (currentIndex < testimonialCards.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // Jika sudah di akhir, kembali ke card pertama
+        }
+        scrollToCard(currentIndex);
+      });
+
+      // Fungsi untuk memulai di card pertama ketika halaman dimuat
+      function initializeSlider() {
+        scrollToCard(currentIndex);
+      }
+
+      // Fungsi untuk menjalankan confetti
       function fireConfetti() {
         var duration = 5 * 1000; // Durasi 5 detik
         var animationEnd = Date.now() + duration;
@@ -158,11 +187,13 @@
         }, 250);
       }
 
-      // Jalankan confetti saat halaman dimuat
+      // Gabungkan inisialisasi slider dan confetti dalam satu window.onload
       window.onload = function () {
-        fireConfetti();
+        initializeSlider(); // Memulai slider di card pertama
+        fireConfetti(); // Jalankan confetti
       };
     </script>
+
     <script src="script.js"></script>
   </body>
 </html>

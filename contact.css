@@ -29,6 +29,7 @@
 }
 .contact-form h2 {
   font-size: 28px;
+  color: #800000;
   margin-bottom: 10px;
 }
 .contact-form p {
@@ -102,6 +103,7 @@
   }
 
   .map-container iframe {
+    margin-top: 20px;
     height: 200px; /* Mengurangi tinggi iframe untuk layar kecil */
   }
 
