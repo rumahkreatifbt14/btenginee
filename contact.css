@@ -1,97 +1,149 @@
-body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-}
 .header {
-    background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.5)), url("img/SMMK.jpg") center/cover no-repeat;
-    background-size: cover;
-    text-align: center;
-    padding: 100px 20px;
-    border-radius: 20px;
-    color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.5)), url("img/SMMK.jpg") center/cover no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 20px;
+  color: white;
 }
 .header h1 {
-    font-size: 36px;
-    margin: 0;
+  font-size: 36px;
+  margin: 0;
 }
 .header p {
-    font-size: 18px;
-    margin: 10px 0 0;
+  font-size: 18px;
+  margin: 10px 0 0;
 }
 .contact-info {
-    display: flex;
-    justify-content: center;
-    margin: -50px 20px 20px;
+  display: flex;
+  justify-content: center;
+  margin: -50px 20px 20px;
 }
 .contact-info div {
-    background: white;
-    padding: 20px;
-    margin: 0 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
+  background: white;
+  padding: 20px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
 }
 .contact-info div i {
-    font-size: 24px;
-    color: #007bff;
+  font-size: 24px;
+  color: #800000;
 }
 .contact-info div h3 {
-    font-size: 18px;
-    margin: 10px 0 5px;
+  font-size: 18px;
+  margin: 10px 0 5px;
 }
 .contact-info div p {
-    font-size: 16px;
-    margin: 0;
+  font-size: 16px;
+  margin: 0;
 }
 .contact-form {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 .contact-form h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 .contact-form p {
-    font-size: 16px;
-    color: #6c757d;
-    margin-bottom: 30px;
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 30px;
 }
 .contact-form form {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .contact-form form .form-group {
-    display: flex;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center; /* Menyelaraskan ikon dan input secara vertikal */
+  margin-bottom: 15px;
 }
+
 .contact-form form .form-group input,
 .contact-form form .form-group textarea {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    font-size: 16px;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
 }
+
 .contact-form form .form-group input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
+
 .contact-form form .form-group i {
-    margin-right: 10px;
-    color: #6c757d;
+  margin-right: 10px; /* Jarak antara ikon dan input */
+  color: #6c757d;
+  font-size: 18px; /* Sesuaikan ukuran ikon jika diperlukan */
 }
+
 .contact-form form .form-group textarea {
-    height: 150px;
-    resize: none;
+  height: 150px;
+  resize: none;
 }
 .contact-form form button {
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  background: linear-gradient(90deg, #eb0303, #800000);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Media Queries untuk tampilan mobile */
+@media (max-width: 768px) {
+  .header {
+    margin-top: 50px;
+    padding: 50px 10px; /* Mengurangi padding */
+  }
+  .header h1 {
+    font-size: 28px; /* Menyesuaikan ukuran font */
+  }
+  .header p {
+    font-size: 16px; /* Menyesuaikan ukuran font */
+  }
+
+  .contact-info {
+    flex-direction: column; /* Mengubah dari row ke column */
+    margin: 0 20px; /* Mengurangi margin */
+  }
+  .contact-info div {
+    margin: 10px 0; /* Menambahkan margin vertikal */
+    width: 100%; /* Memastikan div mengisi lebar layar */
+  }
+
+  .contact-form {
+    padding: 20px 10px; /* Menyesuaikan padding */
+  }
+
+  .contact-form h2 {
+    font-size: 24px; /* Menyesuaikan ukuran font */
+  }
+
+  .contact-form form .form-group {
+    display: flex; /* Mengatur ulang menjadi flex */
+    align-items: center; /* Menyelaraskan ikon dan input secara vertikal */
+    margin-bottom: 15px; /* Jarak antara kelompok form */
+  }
+
+  .contact-form form .form-group input,
+  .contact-form form .form-group textarea {
+    flex: 1; /* Membuat input mengisi ruang yang tersisa */
+    padding: 10px; /* Padding input */
+    border: 1px solid #ced4da; /* Border input */
+    border-radius: 5px; /* Membulatkan sudut */
+    font-size: 16px; /* Ukuran font input */
+    margin-left: 3px; /* Jarak antara ikon dan input */
+  }
+
+  .contact-form form .form-group i {
+    font-size: 18px; /* Ukuran ikon */
+    color: #6c757d; /* Warna ikon */
+  }
 }
