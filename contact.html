@@ -81,17 +81,27 @@
 
       <div class="contact-form">
         <h2>Hubungi Kami</h2>
-        <p>Untuk pertanyaan lebih lanjut, termasuk peluang kerjasama, silakan kirim email ke hello@creative-tim.com atau gunakan formulir kontak kami di bawah ini.</p>
-        <form>
+        <p>Untuk pertanyaan lebih lanjut, termasuk peluang kerjasama, silakan kirim email ke rumahkreatifbt14@gmail.com atau gunakan formulir kontak kami di bawah ini.</p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <!-- Access Key untuk Web3Forms -->
+          <input type="hidden" name="access_key" value="8eae845d-5f26-48ea-a1e8-ab726fa1eb03" />
+
           <div class="form-group">
+            <!-- Input untuk Nama Lengkap -->
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Full Name" />
+            <input type="text" name="name" placeholder="Full Name" required />
+
+            <!-- Input untuk Email -->
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" name="email" placeholder="Email" required />
           </div>
+
           <div class="form-group">
-            <textarea placeholder="Describe your problem in at least 250 characters"></textarea>
+            <!-- Textarea untuk Pesan -->
+            <textarea name="message" placeholder="Describe your problem in at least 250 characters" required></textarea>
           </div>
+
+          <!-- Tombol Submit -->
           <button type="submit">SEND MESSAGE</button>
         </form>
       </div>
