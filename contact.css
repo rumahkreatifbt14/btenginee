@@ -14,32 +14,15 @@
   font-size: 18px;
   margin: 10px 0 0;
 }
-.contact-info {
-  display: flex;
-  justify-content: center;
-  margin: -50px 20px 20px;
+
+.map-container {
+  margin: 20px 0; /* Menambahkan jarak atas dan bawah */
+  text-align: center; /* Mengatur teks menjadi rata tengah */
+  max-width: 1200px; /* Lebar maksimum untuk map container */
+  margin-left: auto; /* Menyusun peta ke tengah */
+  margin-right: auto; /* Menyusun peta ke tengah */
 }
-.contact-info div {
-  background: white;
-  padding: 20px;
-  margin: 0 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  flex: 1;
-}
-.contact-info div i {
-  font-size: 24px;
-  color: #800000;
-}
-.contact-info div h3 {
-  font-size: 18px;
-  margin: 10px 0 5px;
-}
-.contact-info div p {
-  font-size: 16px;
-  margin: 0;
-}
+
 .contact-form {
   text-align: center;
   padding: 20px;
@@ -104,19 +87,10 @@
   .header h1 {
     font-size: 28px; /* Menyesuaikan ukuran font */
   }
+
   .header p {
+    margin-top: 20px;
     font-size: 16px; /* Menyesuaikan ukuran font */
-  }
-
-  .contact-info {
-    flex-direction: column; /* Mengubah dari row ke column */
-    margin: 0 20px; /* Mengurangi margin */
-    width: 83%;
-  }
-
-  .contact-info div {
-    margin: 10px 0; /* Menambahkan margin vertikal */
-    width: 100%; /* Memastikan div mengisi lebar layar */
   }
 
   .contact-form {
@@ -125,6 +99,10 @@
 
   .contact-form h2 {
     font-size: 24px; /* Menyesuaikan ukuran font */
+  }
+
+  .map-container iframe {
+    height: 200px; /* Mengurangi tinggi iframe untuk layar kecil */
   }
 
   .contact-form form .form-group {
