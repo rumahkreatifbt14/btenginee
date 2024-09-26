@@ -1,9 +1,11 @@
+/* Main structure */
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Mengambil seluruh tinggi halaman */
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .testimonial-container {
@@ -36,7 +38,7 @@ main {
   height: 100px;
   border-radius: 50%;
   margin: 10px 0;
-  object-fit: cover; /* memastikan gambar tidak terdistorsi */
+  object-fit: cover;
 }
 
 .testimonial-content {
@@ -45,7 +47,7 @@ main {
 }
 
 .testimonial-content h4 {
-  margin-top: 10px; /* Memberikan ruang antara avatar dan nama */
+  margin-top: 10px;
   color: #000;
   font-weight: bold;
   font-size: 1.2em;
@@ -68,16 +70,16 @@ main {
 }
 
 .testimonial-header h2 {
-  font-size: 2em;
+  font-size: 5em;
   color: #800000;
   margin: 0;
 }
 
 .testimonial-header h3 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #000;
   margin: 5px 0 10px 0;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .underline {
@@ -111,5 +113,57 @@ main {
   color: #800000;
 }
 
+/* Responsive for mobile devices */
 @media (max-width: 768px) {
+  main {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .testimonial-header h2 {
+    font-size: 2.5em;
+  }
+
+  .testimonial-header h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-slider {
+    width: 100%;
+  }
+
+  .testimonial-card {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .testimonial-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial-content h4 {
+    font-size: 1em;
+  }
+
+  .testimonial-content h3 {
+    font-size: 1.2em;
+  }
+
+  .testimonial-content p {
+    font-size: 0.9em;
+  }
+
+  .arrow {
+    font-size: 1.5em;
+  }
+
+  .left-arrow {
+    left: 5px;
+  }
+
+  .right-arrow {
+    right: 5px;
+  }
 }
