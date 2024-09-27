@@ -179,23 +179,53 @@
       <p>&copy; 2024 BT Enginee. All rights reserved.</p>
     </footer>
     <script>
+      // Function to load reviews from localStorage when the page loads
+      function loadReviews() {
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+          const reviewsSpan = card.querySelector('.reviews');
+          const productCode = card.querySelector('a.button').getAttribute('onclick').match(/'(\d+)'/)[1];
+          
+          // Get reviews count from localStorage
+          const savedReviews = localStorage.getItem(`reviews_${productCode}`);
+          if (savedReviews) {
+            reviewsSpan.setAttribute('data-reviews', savedReviews);
+            reviewsSpan.textContent = `(${savedReviews} Reviews)`;
+          }
+        });
+      }
+    
+      // Function to update reviews and send WhatsApp message
       function updateReviewsAndWhatsApp(button, productCode, productName) {
         // Get the reviews span and its current count
         const reviewsSpan = button.closest(".product-card").querySelector(".reviews");
         let currentReviews = parseInt(reviewsSpan.getAttribute("data-reviews"));
-
+    
         // Update the review count
         currentReviews += 1;
         reviewsSpan.setAttribute("data-reviews", currentReviews);
         reviewsSpan.textContent = `(${currentReviews} Reviews)`;
-
-        // Open WhatsApp with the product code and product name in the message
-        const message = `Halo, saya tertarik untuk membeli produk ${productName} dengan kode ${productCode}.`;
+    
+        // Save the updated review count to localStorage
+        localStorage.setItem(`reviews_${productCode}`, currentReviews);
+    
+        // Get the product image URL
+        const productImage = button.closest(".product-card").querySelector("img").src;
+    
+        // Open WhatsApp with the product code, product name, and image in the message
+        const message = `Halo, saya tertarik untuk membeli produk ${productName} dengan kode ${productCode}. Berikut adalah gambar produknya: ${productImage}`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/6282172830287?text=${encodedMessage}`; // Replace with your WhatsApp number
-
+    
         window.open(whatsappUrl, "_blank");
       }
+    
+      // Call loadReviews function when the page loads
+      window.onload = function () {
+        loadReviews();
+      };
     </script>
+    
+    
   </body>
 </html>
